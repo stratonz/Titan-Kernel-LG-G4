@@ -2275,11 +2275,6 @@ static int wait_tb_buffers_until_unlocked(struct tree_balance *tb)
 #ifdef CONFIG_REISERFS_CHECK
 			repeat_counter++;
 			if ((repeat_counter % 10000) == 0) {
-				reiserfs_warning(tb->tb_sb, "reiserfs-8200",
-						 "too many iterations waiting "
-						 "for buffer to unlock "
-						 "(%b)", locked);
-
 				/* Don't loop forever.  Try to recover from possible error. */
 
 				return (FILESYSTEM_CHANGED_TB(tb)) ?

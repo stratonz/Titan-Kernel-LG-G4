@@ -3684,9 +3684,7 @@ static irqreturn_t nv_nic_irq_tx(int foo, void *data)
 				mod_timer(&np->nic_poll, jiffies + POLL_WAIT);
 			}
 			spin_unlock_irqrestore(&np->lock, flags);
-			netdev_dbg(dev, "%s: too many iterations (%d)\n",
-				   __func__, i);
-			break;
+						break;
 		}
 
 	}
@@ -3801,9 +3799,7 @@ static irqreturn_t nv_nic_irq_rx(int foo, void *data)
 				mod_timer(&np->nic_poll, jiffies + POLL_WAIT);
 			}
 			spin_unlock_irqrestore(&np->lock, flags);
-			netdev_dbg(dev, "%s: too many iterations (%d)\n",
-				   __func__, i);
-			break;
+						break;
 		}
 	}
 
@@ -3867,9 +3863,7 @@ static irqreturn_t nv_nic_irq_other(int foo, void *data)
 				mod_timer(&np->nic_poll, jiffies + POLL_WAIT);
 			}
 			spin_unlock_irqrestore(&np->lock, flags);
-			netdev_dbg(dev, "%s: too many iterations (%d)\n",
-				   __func__, i);
-			break;
+						break;
 		}
 
 	}
